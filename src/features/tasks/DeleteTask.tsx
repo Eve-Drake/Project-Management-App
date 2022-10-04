@@ -1,8 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { Task } from './TaskInterface';
 
-const DeleteTask = () => {
+interface Props{
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>,
+  tasks: Task[],
+  id: number
+}
+
+const DeleteTask = ({setTasks, tasks, id}:Props) => {
+
+  const handleDelete = (id:number) =>{
+    setTasks(tasks.filter(el=>el.id !== id))
+  }
   return (
-    <div>DeleteTask</div>
+    <div>
+      <button onClick={()=>handleDelete(id)}>Delete</button>
+    </div>
   )
 }
 

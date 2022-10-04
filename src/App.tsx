@@ -9,7 +9,7 @@ import './index.css'
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([])
-  const [categories, setCategories] =  useState<string[]>([])
+  const [categories, setCategories] =  useState<string[]>(['Main', 'Secondary'])
   return (
     <div className="grid grid-cols-1 md:grid-cols-4">
       <div className="grid col-span-1 h-32 md:h-screen border-2 border-black ">
@@ -18,7 +18,7 @@ function App() {
       </div>
       <div className="grid col-span-3 p-2 h-96 md:h-screen">
         <AddTask setTasks={setTasks} categories={categories} tasks={tasks}/>
-        <DisplayTasks tasks={tasks}/>
+        <DisplayTasks tasks={tasks} setTasks={setTasks}/>
       </div>
     </div>
   )

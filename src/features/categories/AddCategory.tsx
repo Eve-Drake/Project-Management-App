@@ -6,7 +6,7 @@ interface Props {
 }
 
 const AddCategory = ({setCategories, categories}: Props) => {
-  const [categoryName, setCategoryName] =  useState<string>('');
+  const [categoryName, setCategoryName] =  useState<string>();
   const [alert, setAlert] = useState<boolean>(false)
 
   const addCategory = () =>{
@@ -30,7 +30,7 @@ const AddCategory = ({setCategories, categories}: Props) => {
       />
       <button className='border border-gray-500 rounded-md' onClick={addCategory}>Add Category</button>
       
-      <div className={(alert? 'text-red' : 'hidden')}>
+      <div className={(alert? '' : 'hidden')}>
         <p>Please Remember to Enter your task</p>
       </div>
     </div>

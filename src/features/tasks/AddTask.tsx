@@ -12,7 +12,7 @@ const AddTask = ({setTasks, categories, tasks}: Props) => {
   const [categoryName, setCategoryName] = useState<string>('')
 
   const addNewTask = () =>{
-    if(taskName){
+    if(categoryName && taskName){
       setTasks([...tasks, 
         {task: taskName, 
         id: Math.floor(Math.random()*1000),
@@ -23,23 +23,24 @@ const AddTask = ({setTasks, categories, tasks}: Props) => {
   }
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-5 h-8 m-2 gap-2'>
-      <input 
-      className='grid col-span-3 '
-      placeholder='Task Name'
-      value={taskName}
-      onChange={(e)=>setTaskName(e.target.value)}
-      />
-  
-      <select className='grid col-span-1 '
-      onChange={(e)=>setCategoryName(e.target.value)}>
-        {categories.map((el)=>
-        <option key={el} value={el}>{el}</option>)}
-      </select>
+      <div className='grid grid-cols-1 md:grid-cols-5 h-8 m-2 gap-2'>
+        <input 
+        className='grid col-span-3 '
+        placeholder='Task Name'
+        value={taskName}
+        onChange={(e)=>setTaskName(e.target.value)}
+        />
+    
+        <select className='grid col-span-1 '
+        onChange={(e)=>setCategoryName(e.target.value)}>
+          {categories.map((el)=>
+          <option key={el} value={el}>{el}</option>)}
+        </select>
 
-      <button onClick={addNewTask}>Add New Task</button>
-
-    </div>
+        <button onClick={addNewTask}>Add New Task</button>
+        
+      </div>
+    
   )
 }
 

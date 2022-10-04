@@ -4,10 +4,11 @@ import DeleteTask from './DeleteTask'
 import { Task } from './TaskInterface'
 
 interface Props{
-  tasks: Task[]
+  tasks: Task[],
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>
 }
 
-const DisplayTasks = ({tasks} : Props) => {
+const DisplayTasks = ({tasks, setTasks} : Props) => {
   return (
     <div className='p-2 m-2'>
       {tasks.map((task)=>(
@@ -17,7 +18,7 @@ const DisplayTasks = ({tasks} : Props) => {
           <p>{task.category}</p>
           </div>
           <div className='grid col-span-1 content-end'>
-            <DeleteTask/>
+            <DeleteTask setTasks={setTasks} tasks={tasks} id={task.id}/>
             <CompleteTask />
           </div>
         </div>
