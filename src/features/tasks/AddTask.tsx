@@ -9,16 +9,17 @@ interface Props{
 
 const AddTask = ({setTasks, categories, tasks}: Props) => {
   const [taskName, setTaskName] = useState<string>('');
-  const [categoryName, setCategoryName] = useState<string>('')
+  const [categoryName, setCategoryName] = useState<string>('Main')
 
   const addNewTask = () =>{
-    if(categoryName && taskName){
+    if(taskName){
       setTasks([...tasks, 
         {task: taskName, 
         id: Math.floor(Math.random()*1000),
         completed: false,
         category: categoryName
       }])
+      setTaskName('')
     }
   }
 

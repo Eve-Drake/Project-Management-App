@@ -10,7 +10,7 @@ interface Props{
 
 const DisplayTasks = ({tasks, setTasks} : Props) => {
   return (
-    <div className='p-2 m-2'>
+    <div className='overflow-y-auto p-2 m-2 md:absolute md:w-4/6 right-20 sm:top-8 md:top-16'>
       {tasks.map((task)=>(
         <div key={task.id} className='border border-black rounded m-2 grid grid-cols-3'>
           <div className='grid col-span-2'>
