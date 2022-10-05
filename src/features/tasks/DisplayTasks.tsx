@@ -1,5 +1,4 @@
 import React from 'react'
-import CompleteTask from './CompleteTask'
 import DeleteTask from './DeleteTask'
 import { Task } from './TaskInterface'
 
@@ -19,7 +18,6 @@ const DisplayTasks = ({tasks, setTasks} : Props) => {
           </div>
           <div className='grid col-span-1 content-end'>
             <DeleteTask setTasks={setTasks} tasks={tasks} id={task.id}/>
-            <CompleteTask setTasks={setTasks} tasks={tasks} id={task.id}/>
           </div>
         </div>
       ))}
