@@ -14,8 +14,8 @@ const DisplayTasks = ({tasks, setTasks} : Props) => {
       {tasks.map((task)=>(
         <div key={task.id} className='border border-black rounded m-2 grid grid-cols-3'>
           <div className='grid col-span-2'>
-          <h1>{task.task}</h1>
-          <p>{task.category}</p>
+          <h2>{task.task}</h2>
+          <p className='pl-2'>{task.category}</p>
           </div>
           <div className='grid col-span-1 content-end'>
             <DeleteTask setTasks={setTasks} tasks={tasks} id={task.id}/>

@@ -24,7 +24,11 @@ function App() {
         <AddCategory setCategories={setCategories} categories={categories}/>
       </div>
       <div className="grid col-span-3 p-2 h-96 md:h-screen">
+        
         <AddTask setTasks={setTasks} categories={categories} tasks={tasks}/>
+        <h1 className="md:absolute  md:inset-x-94  md:top-12">
+          {activeCategory}
+        </h1>
         <DisplayTasks tasks={activeTaskArray} setTasks={setTasks}/>
       </div>
     </div>
