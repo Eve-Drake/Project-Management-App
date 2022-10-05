@@ -3,6 +3,7 @@ import React from 'react'
 interface Props{
   categories : string[]
   setActiveCategory: React.Dispatch<React.SetStateAction<string>>
+  activeCategory: string
 }
 const DisplayCategories = ({categories, setActiveCategory} : Props) => {
   return (
@@ -15,5 +16,4 @@ const DisplayCategories = ({categories, setActiveCategory} : Props) => {
     </div>
   )
 }
-
 export default DisplayCategories

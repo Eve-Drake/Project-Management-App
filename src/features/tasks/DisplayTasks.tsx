@@ -19,7 +19,7 @@ const DisplayTasks = ({tasks, setTasks} : Props) => {
           </div>
           <div className='grid col-span-1 content-end'>
             <DeleteTask setTasks={setTasks} tasks={tasks} id={task.id}/>
-            <CompleteTask />
+            <CompleteTask setTasks={setTasks} tasks={tasks} id={task.id}/>
           </div>
         </div>
       ))}
