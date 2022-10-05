@@ -2,7 +2,7 @@ import React from 'react'
 
 const DeleteCategory = () => {
   return (
-    <div>DeleteCategory</div>
+    <button >X</button>
   )
 }
 
