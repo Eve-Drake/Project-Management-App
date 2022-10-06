@@ -14,7 +14,7 @@ const DisplayCategories = ({categories, setActiveCategory} : Props) => {
           <button key={category} onClick={()=>setActiveCategory(category)} className='p-2 m-2 border rounded cursor-pointer w-5/6'> 
             {category}
           </button>
-          <DeleteCategory/>
+          <DeleteCategory category={category} categories={categories}/>
         </div>
       ))}
     </div>
