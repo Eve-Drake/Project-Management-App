@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import { Task } from "../../tasks/TaskInterface";
-const ProjectContext = createContext<Task[] | string | null | string[]>(null);
+const ProjectContext = createContext<Task[] | string  | string[]| null>(null);
 
 const ProjectProvider = ({ children }) => {
     const [tasks, setTasks] = useState<Task[]>([{task:'Example Main Task', id: 0, category: 'Main'}, {task:'Example Secondary Task', id: 1, category: 'Secondary'}])
