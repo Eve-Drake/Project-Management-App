@@ -16,7 +16,8 @@ const AddTask = ({setTasks, categories, tasks}: Props) => {
       setTasks([...tasks, 
         {task: taskName, 
         id: Math.floor(Math.random()*1000),
-        category: categoryName
+        category: categoryName,
+        complete: false
       }])
       setTaskName('')
     }

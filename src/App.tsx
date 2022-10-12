@@ -5,19 +5,24 @@ import AddTask from "./features/tasks/AddTask"
 import DisplayTasks from "./features/tasks/DisplayTasks"
 import { Task } from "./features/tasks/Interface"
 import './index.css'
+import {TasksProvider} from './features/state/TaskContex'
 
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([{task:'Example Main Task', id: 0, category: 'Main'}, {task:'Example Secondary Task', id: 1, category: 'Secondary'}])
+  const [tasks, setTasks] = useState<Task[]>([{task:'Example Main Task', id: 0, category: 'Main', complete : false}, {task:'Example Secondary Task', id: 1, category: 'Secondary', complete : false}])
   const [categories, setCategories] =  useState<string[]>(['Main', 'Secondary'])
   const [activeCategory, setActiveCategory] = useState<string>('Main');
   const [activeTaskArray, setActiveTaskArray] = useState<Task[]>([])
 
   useEffect(()=>{
    setActiveTaskArray(tasks.filter(el => el.category === activeCategory))
-  },[activeCategory, tasks])
+   localStorage.setItem('tasks', JSON.stringify(tasks))
+   localStorage.setItem('categories', JSON.stringify(categories))
+  },[activeCategory, tasks, categories])
+
 
   return (
+    <TasksProvider>
     <div className="grid grid-cols-1 md:grid-cols-4">
       <div className="grid col-span-1 h-32 md:h-screen border-2 md:border-r-black ">
         <DisplayCategories 
@@ -47,6 +52,7 @@ function App() {
           setTasks={setTasks} />
       </div>
     </div>
+    </TasksProvider>
   )
 }
 
