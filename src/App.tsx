@@ -42,7 +42,8 @@ function App() {
           {activeCategory}
         </h1>
         <DisplayTasks 
-          tasks={tasks} 
+          activeTasks={activeTaskArray} 
+          tasks={tasks}
           setTasks={setTasks} />
       </div>
     </div>
