@@ -1,5 +1,5 @@
 import React, { useState }  from 'react'
-import { Task } from './TaskInterface'
+import { Task } from './Interface'
 
 interface Props{
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>,
