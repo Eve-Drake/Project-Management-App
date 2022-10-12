@@ -6,7 +6,7 @@ interface Props {
 }
 
 const AddCategory = ({setCategories, categories}: Props) => {
-  const [categoryName, setCategoryName] =  useState<string>();
+  const [categoryName, setCategoryName] =  useState<string>('');
   const [alert, setAlert] = useState<boolean>(false)
 
   const addCategory = () =>{

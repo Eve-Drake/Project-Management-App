@@ -5,17 +5,17 @@ interface Props {
     children?: ReactNode
 }
 
-const TaskContext = createContext<string>();
+const CategoriesContext = createContext<string[] | null>(null);
 
 export function TasksProvider({ children }: Props){
     const [categories, setCategories] =  useState<string[]>(['Main', 'Secondary'])
     const [activeCategory, setActiveCategory] = useState<string>('Main');
    
     return(
-        <TaskContext.Provider value={'Yyy'}>
+        <CategoriesContext.Provider value={{categories, setCategories, activeCategory, setActiveCategory}}>
             {children}
-        </TaskContext.Provider>
+        </CategoriesContext.Provider>
     )
 }
 
-export default TaskContext
+export default CategoriesContext
