@@ -5,7 +5,14 @@ interface Props {
     children?: ReactNode
 }
 
-const CategoriesContext = createContext<string[] | null>(null);
+interface CategoriesContextInterface{
+    categories: string[],
+    setCategories: React.Dispatch<React.SetStateAction<string[]>>,
+    activeCategory: string,
+    setActiveCategory: React.Dispatch<React.SetStateAction<string>>
+}
+
+const CategoriesContext = createContext<CategoriesContextInterface | null>(null);
 
 export function TasksProvider({ children }: Props){
     const [categories, setCategories] =  useState<string[]>(['Main', 'Secondary'])
