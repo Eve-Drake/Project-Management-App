@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import AddCategory from "./features/categories/AddCategory"
 import DisplayCategories from "./features/categories/DisplayCategories"
 import AddTask from "./features/tasks/AddTask"
 import DisplayTasks from "./features/tasks/DisplayTasks"
 import { Task } from "./features/tasks/Interface"
 import './index.css'
-import {TasksProvider} from './features/state/TaskContex'
-
+import Tas from './features/state/TaskContex'
+import CategoriesContext from './features/state/CategoriesContext'
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([{task:'Example Main Task', id: 0, category: 'Main', complete : false}, {task:'Example Secondary Task', id: 1, category: 'Secondary', complete : false}])
   const [categories, setCategories] =  useState<string[]>(['Main', 'Secondary'])
-  const [activeCategory, setActiveCategory] = useState<string>('Main');
   const [activeTaskArray, setActiveTaskArray] = useState<Task[]>([])
+  const [activeCategory, setActiveCategory] = useState<string>('Main');
 
   useEffect(()=>{
    setActiveTaskArray(tasks.filter(el => el.category === activeCategory))
@@ -22,6 +22,7 @@ function App() {
 
 
   return (
+
     <div className="grid grid-cols-1 md:grid-cols-4">
       <div className="grid col-span-1 h-32 md:h-screen border-2 md:border-r-black ">
         <DisplayCategories 
