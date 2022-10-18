@@ -36,7 +36,7 @@ function App() {
         <h1 className="md:absolute  md:inset-x-94  md:top-12">
           {activeCategory}
         </h1>
-        <DisplayTasks />
+        <DisplayTasks tasks={activeTaskArray}/>
       </div>
     </div>
   )

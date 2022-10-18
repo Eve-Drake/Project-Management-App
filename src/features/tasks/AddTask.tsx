@@ -1,9 +1,11 @@
-import React, { useState }  from 'react'
-import { Task } from './Interface'
+import React, { useContext, useState }  from 'react'
+import CategoryContext, { CategoryContexInterface } from "../state/CategoryContext"
 
 
 
 const AddTask = () => {
+
+  const {categories} = useContext(CategoryContext) as CategoryContexInterface
   const [taskName, setTaskName] = useState<string>('');
   const [categoryName, setCategoryName] = useState<string>('Main')
 

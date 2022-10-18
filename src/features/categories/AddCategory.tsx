@@ -1,23 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import CategoryContext, { CategoryContexInterface } from '../state/CategoryContext';
 
-interface Props {
-  setCategories : React.Dispatch<React.SetStateAction<string[]>>,
-  categories: string[]
-}
-
-const AddCategory = ({setCategories, categories}: Props) => {
+const AddCategory = () => {
+  const {categories} = useContext(CategoryContext) as CategoryContexInterface
   const [categoryName, setCategoryName] =  useState<string>('');
   const [alert, setAlert] = useState<boolean>(false)
 
   const addCategory = () =>{
-    setAlert(false)
-    if (categoryName){
-    setCategories([...categories, categoryName]);
-    setCategoryName('')
-    }
-    else{
-      setAlert(true)
-    }
+    
   }
 
   return (
