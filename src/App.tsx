@@ -7,12 +7,14 @@ import { Task } from "./features/tasks/Interface"
 import './index.css'
 import TaskContext, { TaskContexInterface } from "./features/state/TaskContex"
 import CategoryContext, { CategoryContexInterface } from "./features/state/CategoryContext"
+import ActiveCategoryContext, { ActiveCategoryContexInterface } from "./features/state/ActiveCategoryContext"
 
 function App() {
   const {tasks} =  useContext(TaskContext) as TaskContexInterface
   const {categories} = useContext(CategoryContext) as CategoryContexInterface
+  const {activeCategory} = useContext(ActiveCategoryContext) as ActiveCategoryContexInterface
+  
   const [activeTaskArray, setActiveTaskArray] = useState<Task[]>([])
-  const [activeCategory, setActiveCategory] = useState<string>('Main');
 
   useEffect(()=>{
    setActiveTaskArray(tasks.filter(el => el.category === activeCategory))
@@ -26,7 +28,6 @@ function App() {
     <div className="grid grid-cols-1 md:grid-cols-4">
       <div className="grid col-span-1 h-32 md:h-screen border-2 md:border-r-black ">
         <DisplayCategories />
-
         <AddCategory  />
       </div>
       <div className="grid col-span-3 p-2 h-96 md:h-screen">
