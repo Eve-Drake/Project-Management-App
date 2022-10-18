@@ -5,7 +5,7 @@ import AddTask from "./features/tasks/AddTask"
 import DisplayTasks from "./features/tasks/DisplayTasks"
 import { Task } from "./features/tasks/Interface"
 import './index.css'
-import TaskContext from "./features/state/TaskContex"
+import TaskContext from "./features/state/TaskCategoriesContex"
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([{task:'Example Main Task', id: 0, category: 'Main', complete : false}, {task:'Example Secondary Task', id: 1, category: 'Secondary', complete : false}])
