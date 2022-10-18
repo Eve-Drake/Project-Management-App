@@ -8,7 +8,7 @@ import './index.css'
 import TaskContext from "./features/state/TaskContex"
 
 function App() {
-  const {tasks, setTasks} = useContext(TaskContext)
+  const [tasks, setTasks] = useState<Task[]>([{task:'Example Main Task', id: 0, category: 'Main', complete : false}, {task:'Example Secondary Task', id: 1, category: 'Secondary', complete : false}])
   const [categories, setCategories] =  useState<string[]>(['Main', 'Secondary'])
   const [activeTaskArray, setActiveTaskArray] = useState<Task[]>([])
   const [activeCategory, setActiveCategory] = useState<string>('Main');

@@ -6,7 +6,8 @@ interface Props {
 }
 
 interface TaskContexInterface {
-    tasks: [Task[], React.Dispatch<React.SetStateAction<Task[]>>],
+    tasks: Task[]
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>
     
 }
 
@@ -17,7 +18,7 @@ export function TasksProvider({ children }: Props){
     const [tasks, setTasks] = useState<Task[]>([{task:'Example Main Task', id: 0, category: 'Main', complete : false}, {task:'Example Secondary Task', id: 1, category: 'Secondary', complete : false}])
 
     return(
-        <TaskContext.Provider value={{tasks: [tasks, setTasks] }}>
+        <TaskContext.Provider value={{tasks, setTasks}}>
             {children}
         </TaskContext.Provider>
     )
