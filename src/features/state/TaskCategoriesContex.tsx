@@ -25,18 +25,17 @@ export function TasksProvider({ children }: Props){
     const [activeCategory, setActiveCategory] = useState<string>('Main');
     const [activeTaskArray, setActiveTaskArray] = useState<Task[]>([])
     
-    const addNewTask = () =>{
+    const addTask = (task: Task) =>{
         setTasks([...tasks, 
-            {task: taskName, 
+            {task: task.task, 
             id: Math.floor(Math.random()*1000),
-            category: categoryName,
+            category: task.category,
             complete: false
           }])
-          setTaskName('')
-        
       }
+
     return(
-        <TaskContext.Provider value={{}}>
+        <TaskContext.Provider value={{tasks, categories, activeTaskArray, activeCategory}}>
             {children}
         </TaskContext.Provider>
     )
