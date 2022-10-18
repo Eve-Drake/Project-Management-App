@@ -5,7 +5,7 @@ interface Props {
     children?: ReactNode
 }
 
-interface TaskContexInterface {
+export interface TaskContexInterface {
     tasks: Task[]
     addTask: (task: Task) => void,
     deleteTask : (id: number) => void,

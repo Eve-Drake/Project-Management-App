@@ -5,11 +5,12 @@ import AddTask from "./features/tasks/AddTask"
 import DisplayTasks from "./features/tasks/DisplayTasks"
 import { Task } from "./features/tasks/Interface"
 import './index.css'
-import TaskContext from "./features/state/TaskContex"
+import TaskContext, { TaskContexInterface } from "./features/state/TaskContex"
+import CategoryContext, { CategoryContexInterface } from "./features/state/CategoryContext"
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([{task:'Example Main Task', id: 0, category: 'Main', complete : false}, {task:'Example Secondary Task', id: 1, category: 'Secondary', complete : false}])
-  const [categories, setCategories] =  useState<string[]>(['Main', 'Secondary'])
+  const {tasks} =  useContext(TaskContext) as TaskContexInterface
+  const {categories} = useContext(CategoryContext) as CategoryContexInterface
   const [activeTaskArray, setActiveTaskArray] = useState<Task[]>([])
   const [activeCategory, setActiveCategory] = useState<string>('Main');
 
@@ -24,31 +25,17 @@ function App() {
 
     <div className="grid grid-cols-1 md:grid-cols-4">
       <div className="grid col-span-1 h-32 md:h-screen border-2 md:border-r-black ">
-        <DisplayCategories 
-          categories={categories} 
-          setActiveCategory={setActiveCategory} 
-          activeCategory={activeCategory} 
-        />
+        <DisplayCategories />
 
-        <AddCategory 
-          setCategories={setCategories} 
-          categories={categories} 
-        />
+        <AddCategory  />
       </div>
       <div className="grid col-span-3 p-2 h-96 md:h-screen">
-        <AddTask 
-          setTasks={setTasks} 
-          categories={categories} 
-          tasks={tasks} 
-        />
+        <AddTask/>
 
         <h1 className="md:absolute  md:inset-x-94  md:top-12">
           {activeCategory}
         </h1>
-        <DisplayTasks 
-          activeTasks={activeTaskArray} 
-          tasks={tasks}
-          setTasks={setTasks} />
+        <DisplayTasks />
       </div>
     </div>
   )

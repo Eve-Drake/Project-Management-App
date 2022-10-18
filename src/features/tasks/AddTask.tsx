@@ -1,27 +1,11 @@
 import React, { useState }  from 'react'
 import { Task } from './Interface'
 
-interface Props{
-  setTasks: React.Dispatch<React.SetStateAction<Task[]>>,
-  categories: string[],
-  tasks: Task[]
-}
 
-const AddTask = ({setTasks, categories, tasks}: Props) => {
+
+const AddTask = () => {
   const [taskName, setTaskName] = useState<string>('');
   const [categoryName, setCategoryName] = useState<string>('Main')
-
-  const addNewTask = () =>{
-    if(taskName){
-      setTasks([...tasks, 
-        {task: taskName, 
-        id: Math.floor(Math.random()*1000),
-        category: categoryName,
-        complete: false
-      }])
-      setTaskName('')
-    }
-  }
 
   return (
       <div className='grid grid-cols-1 md:grid-cols-5 h-8 m-2 gap-2'>
@@ -38,7 +22,7 @@ const AddTask = ({setTasks, categories, tasks}: Props) => {
           <option key={el} value={el}>{el}</option>)}
         </select>
 
-        <button onClick={addNewTask}>Add New Task</button>
+        <button>Add New Task</button>
         
       </div>
     
