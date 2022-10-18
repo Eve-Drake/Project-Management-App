@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode} from "react";
 import { Task } from "../tasks/Interface";
 
 interface Props {
@@ -7,19 +7,18 @@ interface Props {
 
 export interface ActiveTaskContexInterface {
     activeTaskArray: Task[],
-    setActiveTaskArray : (tasks : Task[]) => void
 }
 
-const TaskContext = createContext<ActiveTaskContexInterface|null>(null);
+const ActiveTaskArrayContext = createContext<ActiveTaskContexInterface|null>(null);
 
-export function TasksProvider({ children }: Props){
-    const [activeTaskArray, setActiveTaskArray] = useState<Task[]>([])
+export function ActiveTasksArrayProvider({ children }: Props){
+    const activeTaskArray : Task[] = []
 
     return(
-        <TaskContext.Provider value={{activeTaskArray, setActiveTaskArray}}>
+        <ActiveTaskArrayContext.Provider value={{activeTaskArray}}>
             {children}
-        </TaskContext.Provider>
+        </ActiveTaskArrayContext.Provider>
     )
 }
 
-export default TaskContext
+export default ActiveTaskArrayContext

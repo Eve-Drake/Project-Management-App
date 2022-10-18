@@ -11,7 +11,7 @@ export interface ActiveCategoryContexInterface {
 
 const ActiveCategoryContext = createContext<ActiveCategoryContexInterface|null>(null);
 
-export function CategoriesProvider({ children }: Props){
+export function ActiveCategoriesProvider({ children }: Props){
     const [activeCategory, setActiveCategory] = useState<string>('Main');
 
     const selectCategory = (name: string) =>{
