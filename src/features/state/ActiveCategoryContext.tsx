@@ -16,9 +16,7 @@ export function ActiveCategoriesProvider({ children }: Props){
 
     const selectCategory = (name: string) =>{
         setActiveCategory(name)
-      }
-
-
+    }
 
     return(
         <ActiveCategoryContext.Provider value={{activeCategory, selectCategory}}>
