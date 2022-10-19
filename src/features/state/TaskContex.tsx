@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
-import { Task } from "../tasks/Interface";
+import { Task } from "./Interface";
 
 interface Props {
     children?: ReactNode

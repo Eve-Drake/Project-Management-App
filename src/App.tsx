@@ -3,7 +3,7 @@ import AddCategory from "./features/categories/AddCategory"
 import DisplayCategories from "./features/categories/DisplayCategories"
 import AddTask from "./features/tasks/AddTask"
 import DisplayTasks from "./features/tasks/DisplayTasks"
-import { Task } from "./features/tasks/Interface"
+import { Task } from "./features/state/Interface"
 import './index.css'
 import TaskContext, { TaskContexInterface } from "./features/state/TaskContex"
 import CategoryContext, { CategoryContexInterface } from "./features/state/CategoryContext"

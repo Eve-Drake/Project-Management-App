@@ -1,6 +1,6 @@
 import React from 'react'
 import DeleteTask from './DeleteTask'
-import { Task } from './Interface'
+import { Task } from '../state/Interface'
 
 interface Props {
   tasks: Task[]
