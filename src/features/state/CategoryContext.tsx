@@ -17,7 +17,7 @@ export function CategoriesProvider({ children }: Props){
     
     const addCategory = (name: string) =>{
         setCategories([...categories, name])
-      }
+    }
 
     const deleteCategory = (name:string) =>{
     setCategories(categories.filter(el=>el !== name))

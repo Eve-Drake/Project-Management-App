@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import CategoryContext, { CategoryContexInterface } from '../state/CategoryContext';
 
-const DeleteCategory = () => {
+interface Props {
+  category: string
+}
 
-  const deleteCategory = ()=>{
-    console.log('delete')
-  }
+const DeleteCategory = ({category} : Props) => {
+  const { deleteCategory } = useContext(CategoryContext) as CategoryContexInterface
   return (
-    <button onClick={deleteCategory}>X</button>
+    <button onClick={()=>deleteCategory(category)}>X</button>
   )
 }
 

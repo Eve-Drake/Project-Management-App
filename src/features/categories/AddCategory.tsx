@@ -7,7 +7,14 @@ const AddCategory = () => {
   const [alert, setAlert] = useState<boolean>(false)
 
   const add = () =>{
-    addCategory(categoryName)
+    setAlert(false)
+    if (categoryName){
+      addCategory(categoryName)
+      setCategoryName('')
+    }
+    else{
+      setAlert(true)
+    }
   }
 
   return (
