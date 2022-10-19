@@ -1,14 +1,9 @@
 import React from 'react'
 
-interface Props{
-  category: string,
-  categories: string[]
-}
-
-const DeleteCategory = ({category, categories}:Props) => {
+const DeleteCategory = () => {
 
   const deleteCategory = ()=>{
-    
+    console.log('delete')
   }
   return (
     <button onClick={deleteCategory}>X</button>

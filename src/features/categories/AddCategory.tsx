@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react'
 import CategoryContext, { CategoryContexInterface } from '../state/CategoryContext';
 
 const AddCategory = () => {
-  const {categories} = useContext(CategoryContext) as CategoryContexInterface
+  const {addCategory} = useContext(CategoryContext) as CategoryContexInterface
   const [categoryName, setCategoryName] =  useState<string>('');
   const [alert, setAlert] = useState<boolean>(false)
 
-  const addCategory = () =>{
-    
+  const add = () =>{
+    addCategory(categoryName)
   }
 
   return (
@@ -18,7 +18,7 @@ const AddCategory = () => {
         value={categoryName}
         onChange={(e)=>setCategoryName(e.target.value)}
       />
-      <button className='border border-gray-500 rounded-md' onClick={addCategory}>Add Category</button>
+      <button className='border border-gray-500 rounded-md' onClick={add}>Add Category</button>
       
       <div className={(alert? '' : 'hidden')}>
         <p>Please Remember to Enter your task</p>
