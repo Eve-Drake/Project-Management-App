@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import TaskContext, { TaskContexInterface } from '../state/TaskContex';
 import { Task } from './Interface';
 
+interface Props{
+  id: number
+}
 
-const DeleteTask = () => {
+const DeleteTask = ({id}: Props) => {
+  const {deleteTask} = useContext(TaskContext) as TaskContexInterface
 
   return (
     <div>
-      <button>Delete</button>
+      <button onClick={()=>deleteTask(id)}>Delete</button>
     </div>
   )
 }

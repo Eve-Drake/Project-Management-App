@@ -7,7 +7,7 @@ interface Props {
 
 export interface TaskContexInterface {
     tasks: Task[]
-    addTask: (task: Task) => void,
+    addTask: (taskName : string, categoryName : string) => void,
     deleteTask : (id: number) => void,
 }
 
@@ -16,11 +16,11 @@ const TaskContext = createContext<TaskContexInterface|null>(null);
 export function TasksProvider({ children }: Props){
     const [tasks, setTasks] = useState<Task[]>([{task:'Example Main Task', id: 0, category: 'Main', complete : false}, {task:'Example Secondary Task', id: 1, category: 'Secondary', complete : false}])
     
-    const addTask = (task: Task) =>{
+    const addTask = (taskName : string, categoryName : string) =>{
         setTasks([...tasks, 
-            {task: task.task, 
+            {task: taskName, 
             id: Math.floor(Math.random()*1000),
-            category: task.category,
+            category: categoryName,
             complete: false
           }])
       }

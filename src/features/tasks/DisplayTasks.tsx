@@ -16,7 +16,7 @@ const DisplayTasks = ({tasks} : Props) => {
           <p className='pl-2'>{task.category}</p>
           </div>
           <div className='grid col-span-1 content-end'>
-            <DeleteTask />
+            <DeleteTask id={task.id}/>
           </div>
         </div>
       ))}

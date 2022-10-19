@@ -1,13 +1,22 @@
 import React, { useContext, useState }  from 'react'
 import CategoryContext, { CategoryContexInterface } from "../state/CategoryContext"
+import TaskContext, { TaskContexInterface } from '../state/TaskContex'
 
 
 
 const AddTask = () => {
 
   const {categories} = useContext(CategoryContext) as CategoryContexInterface
+  const {addTask} = useContext(TaskContext) as TaskContexInterface
   const [taskName, setTaskName] = useState<string>('');
   const [categoryName, setCategoryName] = useState<string>('Main')
+  
+  
+  const handleAdd =()=>{
+    addTask(taskName, categoryName);
+    setCategoryName('')
+    setTaskName('')
+  }
 
   return (
       <div className='grid grid-cols-1 md:grid-cols-5 h-8 m-2 gap-2'>
@@ -24,7 +33,7 @@ const AddTask = () => {
           <option key={el} value={el}>{el}</option>)}
         </select>
 
-        <button>Add New Task</button>
+        <button onClick={handleAdd}>Add New Task</button>
         
       </div>
     
