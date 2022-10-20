@@ -11,7 +11,7 @@ const DisplayCategories = () => {
 
   return (
     <div className='overflow-y-auto h-5/6 '>
-     <p className={alert? 'block' : 'hidden'}>Cannot Delete Main Category</p> 
+     <p className={alert? 'text-red-500' : 'hidden'}>Cannot Delete Main Category</p> 
      {categories.map((category)=>(
         <div key={category}>
           <button key={category} onClick={()=>selectCategory(category)} className='p-2 m-2 border rounded cursor-pointer w-5/6'> 
