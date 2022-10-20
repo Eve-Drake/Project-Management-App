@@ -14,7 +14,7 @@ const DisplayCategories = () => {
      <p className={alert? 'text-red-500' : 'hidden'}>Cannot Delete Main Category</p> 
      {categories.map((category)=>(
         <div key={category}>
-          <button key={category} onClick={()=>selectCategory(category)} className='p-2 m-2 border rounded cursor-pointer w-5/6'> 
+          <button onClick={()=>selectCategory(category)} className='p-2 m-2 border rounded cursor-pointer w-5/6'> 
             {category}
           </button>
           <DeleteCategory category={category} setAlert={setAlert}/>
