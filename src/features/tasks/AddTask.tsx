@@ -14,7 +14,6 @@ const AddTask = () => {
   
   const handleAdd =()=>{
     addTask(taskName, categoryName);
-    setCategoryName('')
     setTaskName('')
   }
 
