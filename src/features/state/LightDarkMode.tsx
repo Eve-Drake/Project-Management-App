@@ -4,30 +4,24 @@ interface Props {
     children?: ReactNode
 }
 
-export interface LightDarkMODeInterface {
-    categories: string[]
-    addCategory: (category: string) => void,
-    deleteCategory : (name: string) => void,
+export interface LightDarkModeInterface {
+    darkMode: boolean,
 }
 
 const LightDarkModeContext = createContext<LightDarkModeInterface|null>(null);
 
 export function CategoriesProvider({ children }: Props){
-    const [categories, setCategories] =  useState<string[]>(['Main', 'Secondary'])
+    const [darkMode, setDarkMode] =useState(false)
     
-    const addCategory = (name: string) =>{
-        setCategories([...categories, name])
-    }
- 
-    const deleteCategory = (name:string) =>{
-        setCategories(categories.filter(el=>el !== name))
+    const switchDarkmode = () =>{
+        setDarkMode(!darkMode)
     }
 
     return(
-        <CategoryContext.Provider value={{categories, addCategory, deleteCategory}}>
+        <LightDarkModeContext.Provider value={{darkMode}}>
             {children}
-        </CategoryContext.Provider>
+        </LightDarkModeContext.Provider>
     )
 }
 
-export default CategoryContext
+export default LightDarkModeContext
