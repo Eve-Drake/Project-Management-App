@@ -6,6 +6,7 @@ interface Props {
 
 export interface LightDarkModeInterface {
     darkMode: boolean,
+    switchDarkMode: (darkMode: boolean) => void,
 }
 
 const LightDarkModeContext = createContext<LightDarkModeInterface|null>(null);
@@ -18,7 +19,7 @@ export function CategoriesProvider({ children }: Props){
     }
 
     return(
-        <LightDarkModeContext.Provider value={{darkMode}}>
+        <LightDarkModeContext.Provider value={{darkMode, switchDarkMode}}>
             {children}
         </LightDarkModeContext.Provider>
     )
