@@ -14,7 +14,7 @@ const LightDarkModeContext = createContext<LightDarkModeInterface|null>(null);
 export function CategoriesProvider({ children }: Props){
     const [darkMode, setDarkMode] =useState(false)
     
-    const switchDarkmode = () =>{
+    const switchDarkMode = () =>{
         setDarkMode(!darkMode)
     }
 
