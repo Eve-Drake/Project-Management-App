@@ -7,6 +7,7 @@ interface Props {
 }
 
 const DisplayTasks = ({tasks} : Props) => {
+
   return (
     <div className='overflow-y-auto p-2 m-2 md:absolute md:w-4/6 right-20 sm:top-8 md:top-16'>
       {tasks.map((task)=>(

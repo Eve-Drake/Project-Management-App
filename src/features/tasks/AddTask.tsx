@@ -28,8 +28,8 @@ const AddTask = () => {
     
         <select className='grid col-span-1 '
         onChange={(e)=>setCategoryName(e.target.value)}>
-          {categories.map((el)=>
-          <option key={el} value={el}>{el}</option>)}
+          {categories.map((el, index)=>
+          <option key={index} value={el}>{el}</option>)}
         </select>
 
         <button onClick={handleAdd}>Add New Task</button>
