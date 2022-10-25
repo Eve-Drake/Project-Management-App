@@ -15,7 +15,7 @@ const CategoryContext = createContext<CategoryContexInterface|null>(null);
 export function CategoriesProvider({ children }: Props){
     const [categories, setCategories] =  useState<string[]>(['Main', 'Secondary'])
     
-    const addCategory = (name: string) =>{
+    const addCategory = (name: string) => {
         setCategories([...categories, name])
     }
  
