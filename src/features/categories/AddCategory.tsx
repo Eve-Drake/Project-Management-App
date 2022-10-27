@@ -28,7 +28,7 @@ const AddCategory = () => {
       <button className='border border-gray-500 rounded-md' onClick={add}>Add Category</button>
       
       <div className={(alert? '' : 'hidden')}>
-        <p>Please Remember to Enter your task</p>
+        <p>Please Remember to Add your task</p>
       </div>
     </div>
   )
