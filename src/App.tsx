@@ -8,12 +8,15 @@ import './index.css'
 import TaskContext, { TaskContexInterface } from "./features/state/TaskContex"
 import CategoryContext, { CategoryContexInterface } from "./features/state/CategoryContext"
 import ActiveCategoryContext, { ActiveCategoryContexInterface } from "./features/state/ActiveCategoryContext"
+import LightDarkModeContext, { LightDarkModeInterface } from "./features/state/LightDarkMode"
 
 function App() {
   const {tasks} =  useContext(TaskContext) as TaskContexInterface
   const {categories} = useContext(CategoryContext) as CategoryContexInterface
   const {activeCategory} = useContext(ActiveCategoryContext) as ActiveCategoryContexInterface
-  
+  const {darkMode} = useContext(LightDarkModeContext) as LightDarkModeInterface
+
+
   const [activeTaskArray, setActiveTaskArray] = useState<Task[]>([])
 
   useEffect(()=>{
@@ -27,6 +30,7 @@ function App() {
 
     <div className="grid grid-cols-1 md:grid-cols-4">
       <div className="grid col-span-1 h-32 md:h-screen border-2 md:border-r-black ">
+
         <DisplayCategories />
         <AddCategory  />
       </div>
