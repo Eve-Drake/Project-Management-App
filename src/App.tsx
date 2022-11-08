@@ -8,7 +8,7 @@ import './index.css'
 import TaskContext, { TaskContexInterface } from "./features/state/TaskContex"
 import CategoryContext, { CategoryContexInterface } from "./features/state/CategoryContext"
 import ActiveCategoryContext, { ActiveCategoryContexInterface } from "./features/state/ActiveCategoryContext"
-import LightDarkModeContext, { LightDarkModeInterface } from "./features/state/LightDarkMode"
+
 
 function App() {
   const {tasks} =  useContext(TaskContext) as TaskContexInterface
