@@ -4,7 +4,7 @@
 
 @layer base{
     html{
-        @apply text-TEXT_GREY;
+        @apply text-TEXT_GREY p-2
     }
 }
 
@@ -15,4 +15,5 @@
     h2{
         @apply font-semibold text-lg p-2 text-HEADING_GREY;
     }
+    
 }
