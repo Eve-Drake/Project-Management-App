@@ -15,5 +15,8 @@
     h2{
         @apply font-semibold text-lg p-2 text-HEADING_GREY;
     }
+    p{
+        @apply text-TEXT_GREY
+    }
     
 }
